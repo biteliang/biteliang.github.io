@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://biteliang.github.io</id>
     <title>Gridea</title>
-    <updated>2021-03-03T21:41:30.741Z</updated>
+    <updated>2021-03-03T22:03:26.647Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://biteliang.github.io"/>
     <link rel="self" href="https://biteliang.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://biteliang.github.io/images/avatar.png</logo>
     <icon>https://biteliang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[《牛》 莫言]]></title>
+        <id>https://biteliang.github.io/post/123/</id>
+        <link href="https://biteliang.github.io/post/123/">
+        </link>
+        <updated>2021-03-03T21:56:16.000Z</updated>
+        <content type="html"><![CDATA[<p>那时候我还是个少年。<br>
+那时候我是村里调皮捣蛋的少年。<br>
+那时候我也是村里最让人讨厌的少年。<br>
+这样的少年最令人讨厌的就是他意识不到别人对他的讨厌。他总是哪里热闹就往哪里钻。不管是什么人说什么话他都想伸过耳朵去听听；不管听懂听不懂他都要插嘴。听到了一句什么话、或是看到了一件什么事他便飞跑着到处宣传。碰到大人他跟大人说，碰到小孩他跟小孩说；大人小孩都碰不到他就自言自语，好像把一句话憋在肚子里就要爆炸似的。他总是错以为别人都很喜欢自己，为了讨得别人的欢心他可以干出许多荒唐事。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello World!]]></title>
         <id>https://biteliang.github.io/post/liu-jiu-guang-ge-tou-da/</id>
