@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>关于 | Gridea</title>
+<title>记录一次 IPv6 上网配置 | Gridea</title>
 
 <link rel="shortcut icon" href="https://biteliang.github.io/favicon.ico?v=1618251605295">
 
@@ -89,27 +89,63 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    关于
+                    记录一次 IPv6 上网配置
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2019-01-25 ·
+                        · 2021-04-13 ·
                     </time>
                     
                 </div>
                 <div class="post-content">
-                    <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                    <p>OpenWrt 路由 IPv6 正确上网配置</p>
+<p>前言<br>
+最近发现 OpenWrt 对 IPv6 默认配置有点不和谐，客户机各种无法使用IPv6.<br>
+看了几个群友遇到同类问题后，发现是默认配置惹的祸！！！</p>
+<h2 id="删除-ipv6-ula-前缀">删除 IPv6 ULA 前缀</h2>
+<p><strong>网络 ---&gt; 接口</strong></p>
+<p>将里面的内容删除。</p>
+<figure data-type="image" tabindex="1"><img src="https://biteliang.github.io/post-images/1618251486353.png" alt="" loading="lazy"></figure>
+<h2 id="wan-接口配置">WAN 接口配置</h2>
+<p><strong>网络 ---&gt; 接口 ---&gt; WAN ---&gt; 高级设置</strong></p>
+<ol>
+<li>不勾选 “使用内置的 IPv6 管理”</li>
+<li>“Obtain IPv6-Address”设置为 自动。</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://biteliang.github.io/post-images/1618251499205.png" alt="" loading="lazy"></figure>
+<h2 id="lan-接口设置">LAN 接口设置</h2>
+<p><strong>网络 ---&gt; 接口 ---&gt; LAN ---&gt; 高级设置</strong></p>
+<ol>
+<li>不勾选 “使用内置的 IPv6 管理”</li>
+<li>路由通告服务 设置为 “混合模式”</li>
+<li>关闭 DHCPv6 服务</li>
+<li>勾选 “总是通告默认路由”</li>
+</ol>
+<figure data-type="image" tabindex="3"><img src="https://biteliang.github.io/post-images/1618251508897.png" alt="" loading="lazy"></figure>
+<h2 id="dhcpdns-服务器设置">DHCP/DNS 服务器设置</h2>
+<p><strong>网络 ---&gt; DHCP/DNS ---&gt;  高级设置</strong></p>
+<p>不勾选 “禁止解析 IPv6 DNS 记录”</p>
+<figure data-type="image" tabindex="4"><img src="https://biteliang.github.io/post-images/1618251522104.png" alt="" loading="lazy"></figure>
+<p>保存并重启</p>
+<p><strong>以上设置完毕记得 保存并重启一次路由器！！！</strong></p>
+<p><strong>以上设置完毕记得 保存并重启一次路由器！！！</strong></p>
+<p><strong>以上设置完毕记得 保存并重启一次路由器！！！</strong></p>
+<h2 id="测试-客户机-ipv6">测试 客户机 IPv6</h2>
+<p>百度关键词： IPV6 测试 ，就能找到很多相关测试网站。</p>
+<p><img src="https://biteliang.github.io/post-images/1618251529752.png" alt="" loading="lazy"><br>
+<img src="https://biteliang.github.io/post-images/1618251536114.png" alt="" loading="lazy"></p>
 
                 </div>
             </article>
         </div>
 
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://biteliang.github.io/post/ru-he-huo-qu-cookie/" class="post-title gt-a-link">
+                    如何获取cookie
+                </a>
+            </div>
         
 
         
