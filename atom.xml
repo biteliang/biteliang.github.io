@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://biteliang.github.io</id>
     <title>Gridea</title>
-    <updated>2021-04-10T13:01:48.080Z</updated>
+    <updated>2021-04-12T16:35:04.904Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://biteliang.github.io"/>
     <link rel="self" href="https://biteliang.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://biteliang.github.io/images/avatar.png</logo>
     <icon>https://biteliang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[如何获取cookie]]></title>
+        <id>https://biteliang.github.io/post/ru-he-huo-qu-cookie/</id>
+        <link href="https://biteliang.github.io/post/ru-he-huo-qu-cookie/">
+        </link>
+        <updated>2021-04-12T16:34:33.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://biteliang.github.io/post-images/1618245290840.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【Lyricify】为Spotify提供“滚动”歌词！]]></title>
         <id>https://biteliang.github.io/post/lyricify-wei-spotify-ti-gong-gun-dong-ge-ci/</id>
