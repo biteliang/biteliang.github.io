@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://biteliang.github.io</id>
     <title>Gridea</title>
-    <updated>2021-04-13T19:03:47.297Z</updated>
+    <updated>2021-05-19T14:46:59.026Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://biteliang.github.io"/>
     <link rel="self" href="https://biteliang.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://biteliang.github.io/images/avatar.png</logo>
     <icon>https://biteliang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[一个笔记软件——Joplin]]></title>
+        <id>https://biteliang.github.io/post/yi-ge-bi-ji-ruan-jian-joplin/</id>
+        <link href="https://biteliang.github.io/post/yi-ge-bi-ji-ruan-jian-joplin/">
+        </link>
+        <updated>2021-05-19T14:45:57.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="一个笔记软件joplin">一个笔记软件——Joplin</h1>
+<p><a href="https://joplinapp.org/">Joplin官网</a></p>
+<p>作为个人笔记软件体验不错</p>
+<p>可以搭配坚果云Webdav服务</p>
+<p>电脑上也可以打开Visual Studio Code作为第三方编辑器（当然也可以使用Typora）</p>
+<p>甚至还支持自定义CSS</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/biteliang/Images/main/images/20210519224117.png" alt="效果图" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[两分钟将网易云的歌单导入Spotify]]></title>
         <id>https://biteliang.github.io/post/liang-fen-zhong-jiang-wang-yi-yun-de-ge-dan-dao-ru-spotify/</id>
