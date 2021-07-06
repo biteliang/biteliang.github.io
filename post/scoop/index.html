@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>如何获取cookie | Gridea</title>
+<title>Scoop | Gridea</title>
 
 <link rel="shortcut icon" href="https://biteliang.github.io/favicon.ico?v=1625589034265">
 
@@ -89,16 +89,85 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    如何获取cookie
+                    Scoop
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2021-04-13 ·
+                        · 2021-07-07 ·
                     </time>
                     
                 </div>
                 <div class="post-content">
-                    <figure data-type="image" tabindex="1"><img src="https://biteliang.github.io/post-images/1618245290840.jpg" alt="" loading="lazy"></figure>
+                    <h1 id="scoop">Scoop</h1>
+<h2 id="安装环境">安装环境</h2>
+<ol>
+<li>
+<p>管理员权限打开PowerShell——检查PowerShell版本是否大于5.0<br>
+<code>$psversiontable.psversion.major</code></p>
+</li>
+<li>
+<p>更改PowerShell脚本执行策略——选择A【全是】<br>
+<code>set-executionpolicy remotesigned -s cu</code></p>
+</li>
+<li>
+<p>如果不想Scoop软件默认在C盘，改变安装路径</p>
+<pre><code class="language-html">$env:SCOOP='D:\Scoop'
+[environment]::setEnvironmentVariable('SCOOP',$env:SCOOP,'User')
+iwr -useb get.scoop.sh | iex
+</code></pre>
+</li>
+<li>
+<p>安装下载Scoop：（无法访问则科学上网）</p>
+</li>
+</ol>
+<pre><code class="language-html">iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+</code></pre>
+<h2 id="安装软件">安装软件</h2>
+<pre><code class="language-HTML"># 扩展软件库
+scoop bucket add extras
+# 国内软件库
+scoop bucket add dorado https://github.com/h404bi/dorado
+</code></pre>
+<ul>
+<li>解压软件安装包需要先安装：7zip</li>
+<li>管理员权限软件需要先安装：sudo</li>
+<li>提高下载速度，需要先安装：aria2</li>
+<li>取消aria2接管下载命令 <code>scoop config aria2-enabled False</code></li>
+</ul>
+<h2 id="常用软件">常用软件</h2>
+<pre><code class="language-html">  7zip 19.00 [main]
+  aria2 1.35.0-1 [main]
+  ccleaner 5.82.8950 [extras]
+  clash-for-windows 0.16.1 [dorado]
+  copytranslator 9.1.0 [dorado]
+  cpu-z 1.96.1 [extras]
+  everything 1.4.1.1009 [extras]
+  fastcopy 3.92 [extras]
+  fluent-terminal-np 0.7.5.0 [nonportable]
+  geekuninstaller 1.4.7.142 [extras]
+  GOOGLECHROME 91.0.4472.101 [extras]
+  honeyview 5.40 [extras]
+  innounp 0.50 [main]
+  keepass 2.48.1 [extras]
+  lockhunter 3.4.2 [extras]
+  mpv 0.33.0 [extras]
+  neteasemusic 2.9.1.199099 [dorado]
+  notepad3 5.20.722.1 [extras]
+  qbittorrent 4.3.6 [extras]
+  renamer 7.3 [extras]
+  runany 5.7.5 [dorado]
+  screentogif 2.32.1 [extras]
+  snipaste 1.16.2 [extras]
+  stairspeedtest-reborn 0.7.1 [dorado]
+  sublime-text 4-4107 [extras]
+  tcping 0.39 [dorado]
+  telegram 2.8.4 [extras]
+  typora 0.10.11 [extras]
+  unlocker 1.9.0 [extras]
+  v2ray 4.40.1 [main]
+  v2rayn 4.19 [extras]
+  wechat nightly-20200905 [dorado]
+</code></pre>
 
                 </div>
             </article>
@@ -107,8 +176,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://biteliang.github.io/post/lyricify-wei-spotify-ti-gong-gun-dong-ge-ci/" class="post-title gt-a-link">
-                    【Lyricify】为Spotify提供“滚动”歌词！
+                <a href="https://biteliang.github.io/post/yi-ge-bi-ji-ruan-jian-joplin/" class="post-title gt-a-link">
+                    一个笔记软件——Joplin
                 </a>
             </div>
         
