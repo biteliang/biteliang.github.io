@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>关于 | Gridea</title>
+<title>iperf3，测试群晖的内网传输速度 | Gridea</title>
 
 <link rel="shortcut icon" href="https://biteliang.github.io/favicon.ico?v=1644923350153">
 
@@ -89,27 +89,44 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    关于
+                    iperf3，测试群晖的内网传输速度
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2019-01-25 ·
+                        · 2022-02-15 ·
                     </time>
                     
                 </div>
                 <div class="post-content">
-                    <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                    <p>iperf/iperf3 是另外一个很好用的网络速度测试的工具。如果是在普通的 linux 服务器上，我们可以直接通过 apt/yum 包来直接安装后就能使用了。在群晖中我们依然使用 docker 来快速的安装。</p>
+<p>群晖开启ssh后，Windows上用putty登录</p>
+<pre><code class="language-python"># 输入用户名和密码后，切换到root账户
+sudo -i
+# 安装命令
+docker pull networkstatic/iperf3:latest
+# 配置环境命令并运行iperf3服务端。注意，如果您不熟悉Docker,在测试运行后，该命令将会销毁容器。
+docker run  -it --rm --name=iperf3-server -p 5201:5201 networkstatic/iperf3 -s
+</code></pre>
+<p>在对应测试的内网机器上执行客户端命令即可获得测速结果</p>
+<p>这里依然用Windows为例。Windows上使用Scoop安装iperf3，打开Windows PowerShell</p>
+<pre><code class="language-python">scoop install iperf3
+</code></pre>
+<p>安装成功后，在Windows上打开命令行窗口（继续使用Windows PowerShell也是可以）</p>
+<pre><code class="language-python"># ip地址替换为群晖的内网ip
+iperf3 -c xx.xx.xx.xx
+</code></pre>
 
                 </div>
             </article>
         </div>
 
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://biteliang.github.io/post/scoop/" class="post-title gt-a-link">
+                    Scoop
+                </a>
+            </div>
         
 
         
