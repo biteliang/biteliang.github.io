@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://biteliang.github.io</id>
     <title>Gridea</title>
-    <updated>2022-02-15T14:10:39.292Z</updated>
+    <updated>2022-03-12T14:21:19.901Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://biteliang.github.io"/>
     <link rel="self" href="https://biteliang.github.io/atom.xml"/>
@@ -10,6 +10,56 @@
     <logo>https://biteliang.github.io/images/avatar.png</logo>
     <icon>https://biteliang.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[scoop安装，第二版]]></title>
+        <id>https://biteliang.github.io/post/scoop-an-zhuang-di-er-ban/</id>
+        <link href="https://biteliang.github.io/post/scoop-an-zhuang-di-er-ban/">
+        </link>
+        <updated>2022-03-12T14:19:13.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="安装scoop环境">安装Scoop环境</h2>
+<pre><code class="language-powershell"># 管理员权限打开PowerShell——检查PowerShell版本是否大于5.0
+$psversiontable.psversion.major
+
+# 更改PowerShell脚本执行策略——选择A【全是】
+set-executionpolicy remotesigned -s cu
+
+# 如果不想Scoop软件默认在C盘，改变安装路径
+$env:SCOOP='D:\Scoop'
+[environment]::setEnvironmentVariable('SCOOP',$env:SCOOP,'User')
+
+# 执行安装命令，以下三个命令中选一个即可。
+# 推荐第一个，走国内Gitee线路，速度稳定
+iex (new-object net.webclient).downloadstring('https://gitee.com/RubyKids/scoop-cn/raw/master/install.ps1')
+# iwr -useb get.scoop.sh | iex
+# iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+</code></pre>
+<h2 id="配置网络">配置网络</h2>
+<pre><code class="language-powershell"># 在scoop中设置科学上网,注意自己替换地址和端口，例
+scoop config proxy 127.0.0.1：7890
+</code></pre>
+<h2 id="安装基本软件">安装基本软件</h2>
+<pre><code class="language-powershell"># 安装 7zip git
+# 再aria2，提升下载速度，下载完成后默认启动
+scoop install 7zip git aria2
+# 若不喜欢，可使用命令取消aria2接管下载
+scoop config aria2-enabled False
+</code></pre>
+<h2 id="增加bucket">增加Bucket</h2>
+<pre><code class="language-powershell"># 增加Bucket
+# 注 scoop bucket known 命令可以查看 scoop 默认仓库
+scoop bucket add extras
+# 国内软件库
+scoop bucket add dorado https://github.com/h404bi/dorado
+scoop bucket add apps https://gitee.com/kkzzhizhou/scoop-apps
+</code></pre>
+<h2 id="推荐软件">推荐软件</h2>
+<pre><code class="language-powershell"># scoop-search
+# 可以提高搜索速度
+# 使用方法 scoop-search wechat
+scoop install scoop-search
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[iperf3，测试群晖的内网传输速度]]></title>
         <id>https://biteliang.github.io/post/iperf3ce-shi-qun-hui-de-nei-wang-chuan-shu-su-du/</id>
@@ -231,15 +281,6 @@ scoop bucket add dorado https://github.com/h404bi/dorado
         </link>
         <updated>2021-03-06T21:59:03.000Z</updated>
         <content type="html"><![CDATA[<p>地址 <a href="https://github.com/mengshouer/CheckinBox">CheckinBox</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello World!]]></title>
-        <id>https://biteliang.github.io/post/Hello World/</id>
-        <link href="https://biteliang.github.io/post/Hello World/">
-        </link>
-        <updated>2021-03-03T20:01:59.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://biteliang.github.io/post-images/1614801767106.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>

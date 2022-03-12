@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>如何获取cookie | Gridea</title>
+<title>scoop安装，第二版 | Gridea</title>
 
 <link rel="shortcut icon" href="https://biteliang.github.io/favicon.ico?v=1647094872271">
 
@@ -89,16 +89,57 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    如何获取cookie
+                    scoop安装，第二版
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2021-04-13 ·
+                        · 2022-03-12 ·
                     </time>
                     
                 </div>
                 <div class="post-content">
-                    <figure data-type="image" tabindex="1"><img src="https://biteliang.github.io/post-images/1618245290840.jpg" alt="" loading="lazy"></figure>
+                    <h2 id="安装scoop环境">安装Scoop环境</h2>
+<pre><code class="language-powershell"># 管理员权限打开PowerShell——检查PowerShell版本是否大于5.0
+$psversiontable.psversion.major
+
+# 更改PowerShell脚本执行策略——选择A【全是】
+set-executionpolicy remotesigned -s cu
+
+# 如果不想Scoop软件默认在C盘，改变安装路径
+$env:SCOOP='D:\Scoop'
+[environment]::setEnvironmentVariable('SCOOP',$env:SCOOP,'User')
+
+# 执行安装命令，以下三个命令中选一个即可。
+# 推荐第一个，走国内Gitee线路，速度稳定
+iex (new-object net.webclient).downloadstring('https://gitee.com/RubyKids/scoop-cn/raw/master/install.ps1')
+# iwr -useb get.scoop.sh | iex
+# iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+</code></pre>
+<h2 id="配置网络">配置网络</h2>
+<pre><code class="language-powershell"># 在scoop中设置科学上网,注意自己替换地址和端口，例
+scoop config proxy 127.0.0.1：7890
+</code></pre>
+<h2 id="安装基本软件">安装基本软件</h2>
+<pre><code class="language-powershell"># 安装 7zip git
+# 再aria2，提升下载速度，下载完成后默认启动
+scoop install 7zip git aria2
+# 若不喜欢，可使用命令取消aria2接管下载
+scoop config aria2-enabled False
+</code></pre>
+<h2 id="增加bucket">增加Bucket</h2>
+<pre><code class="language-powershell"># 增加Bucket
+# 注 scoop bucket known 命令可以查看 scoop 默认仓库
+scoop bucket add extras
+# 国内软件库
+scoop bucket add dorado https://github.com/h404bi/dorado
+scoop bucket add apps https://gitee.com/kkzzhizhou/scoop-apps
+</code></pre>
+<h2 id="推荐软件">推荐软件</h2>
+<pre><code class="language-powershell"># scoop-search
+# 可以提高搜索速度
+# 使用方法 scoop-search wechat
+scoop install scoop-search
+</code></pre>
 
                 </div>
             </article>
@@ -107,8 +148,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://biteliang.github.io/post/lyricify-wei-spotify-ti-gong-gun-dong-ge-ci/" class="post-title gt-a-link">
-                    【Lyricify】为Spotify提供“滚动”歌词！
+                <a href="https://biteliang.github.io/post/iperf3ce-shi-qun-hui-de-nei-wang-chuan-shu-su-du/" class="post-title gt-a-link">
+                    iperf3，测试群晖的内网传输速度
                 </a>
             </div>
         
